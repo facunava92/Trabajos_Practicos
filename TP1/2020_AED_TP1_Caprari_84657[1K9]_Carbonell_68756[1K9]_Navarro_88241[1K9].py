@@ -32,6 +32,7 @@ elif fiebre:
         if sintomas:
             personal = int(input('\t¿Es usted un personal de salud? 1-Si | 0-No: '))
             if(not personal):
+                print('\t En los últimos 14 días ...')
                 contacto = int(input('\t¿Estuvo en contacto con casos confirmados? 1-Si | 0-No: '))
                 viaje = int(input('\t¿Realizó viajes fuera del país? 1-Si |0-No: '))
                 zonas = int(input('\t¿Estuvo en zonas de transmisión local? 1-Si | 0-No: '))
