@@ -1,0 +1,203 @@
+### Hay dos valores (edad y temperatura) los cuales no sabemos bien a partir de que valor considerarlos.
+	A partir de 60 años se considera caso de riesgo, incluyendo 60?
+	A partir de 27 grados se considera fiebre, incluyendo 27?
+		
+		El enunciado dice textualmente:
+		"Si es un caso NO sospechoso, pero pertenece al grupo de riesgo porque el paciente es mayor a 60 años."
+		"Si el paciente no tiene neumonía, pero presenta fiebre (temperatura corporal mayor a 37 grados)"
+
+### Estimados profesores, durante el tp en cuestion nos surgio una duda grupal sobre si es necesario hacer validacion de datos.  ¿Es necesario ?
+		
+		No Emilio. No deben hacer validaciones. Ese es un tema de fichas posteriores.
+
+### Buenas, teníamos una duda con respecto a las condiciones para que sea caso sospechoso.
+	Con tener un síntoma respiratorio sumado a la fiebre y cumplir una de las condiciones de transmisión de los últimos 14 días, ya se convierte en caso sospechoso?
+	Y si al tener un síntoma respiratorio, y ser personal de la salud, también se toma como caso sospechoso?
+	
+		a.) Para tu pregunta la respuesta es sí: Fiebre + Un síntoma respiratorio + Una situación de transmisión en 14 días = Sospechoso (eso se deduce con cierta claridad de la tabla del Ministerio).
+		b.) Para tu segunda pregunta, la respuesta es no. Si es personal de salud, debe tener también fiebre además de presentar al menos uno de los síntomas respiratorios (también se deduce de la tabla del Ministerio).
+
+### 1- Si el paciente  pone que "Si" es personal de salud,  automaticamente es sospechoso de corona-virus? sin necesidad de preguntar las otras consignas de: estuvo en el exterior, si estuvo en contacto con casos confirmados, si viajo al exterior etc). O tenes que seguir preguntando los otros casos, a pesar de que haya puesto "Si" en ser paciente de salud. 
+	2- Esta es con respecto al anterior duda tambien. Si hay que cargar/preguntar que fue en los ultimos 14 dias, es decir, que si o si tiene que ser dentro de esos 14 dias lo que tiene con respecto a los motivos antes mencionados (estuvo en el exterior, si estuvo en contacto con casos confirmados, si viajo al exterior etc)
+
+		Si mirás con cuidado el cuadro del Ministerio, verás que la respuesta es tu primera pregunta es no. Sólo con ser personal de salud no es automáticamente sospechoso. Tiene que presentar fiebre y tener al menos un síntoma respiratorio.
+		Y la respuesta  a la segunda pregunta es obviamente sí. Lo que importa es lo que hizo esa persona en los últimos 14 días.
+
+### Buenas tardes, quería consultar si para el TP nº 1 es válido programar una interfaz gráfica (GUI) o si el uso de este recurso todavía no está permitido.
+		Es válido (aunque no pudimos seguir adelante con las fichas opcionales, debido a que la cuarentena nos obligó a cambiar planes y producir otros materiales, como los videos).
+		El uso y aplicación de elementos de interfaz gráfica (uso de ventanas), es completamente opcional. Nadie está obligado de ninguna forma a hacerlo, pero quienes quieran hacerlo pueden. Será valorado el intento, pero también esperaremos que hagan las cosas correctamente: en otras palabras, el uso de interfaces visuales opcionales, no le da "permiso para hacer lo que se les ocurra". Suma, pero háganlo bien.
+
+### que pasa si el paciente no presenta fiebre?
+	Terminamos el programa indicando que no es un caso sospechoso?
+	porque el cuadro indica que se es sospechoso si se presenta fiebre y uno o mas sintomas, por lo que me da a entender que por mas que tengas todos los demas sintomas pero no tenes fiebre no sos sospechoso de covid-19 
+
+		Te faltaría mirar si tiene neumonía. Si tiene neumonía, es sospechoso y basta. Si no tiene neumonía y tampoco fiebre, no es sospechos y basta.
+
+### Buenos tardes profe. Tengo una duda relacionada con el punto 2 (si es un caso autóctono). Dice que si presenta al menos dos síntomas respiratorios consultados. Pero en la publicación del ministerio dice ser sospechoso si presenta fiebre y uno o más síntomas respiratorios. Quiere decir que para un caso autóctono debe presentar fiebre un caso mas de los mencionados o dos síntomas de los tres mencionados?
+
+		Nos atraparon...Nos hemos tomado la libertad de modificar levemente el criterio que se deduce de la tabla del Ministerio, para que ustedes tengan que cargar los tres síntomas por separado y para que tengan que aplicar ciertas estructuras  condicionales sobre esos datos para definir lo que llamamos "caso autóctono"... A fin y al cabo, la tabla ministerial no menciona explícitamente lo que se entiende por "caso autóctono", así que aprovechamos ese gris para introducir un proceso adicional en el programa que les pedimos. Esa es la idea. ;-)
+
+		Agrego un detalle que me parece importante: El cuadro del Ministerio define el caso sospechoso (uno o más síntomas respiratorios entre otras condiciones). Eso NO LO HEMOS CAMBIADO y no hay contradicciones al respecto (me parece que las consultas suenan a eso). Por otro lado, lo que sí AGREGAMOS, es el concepto de caso autóctono, que no está definido en el cuadro, y es una segunda clasificación aplicada a los casos sospechosos.
+
+### Buen dia profe, con el grupo tenemos una duda sobre que pasaria, en el siguiente caso: "Un paciente no presenta fiebre, y tampoco neumonia." Haria falta consultar si estuvo de viaje/contacto con personas infectadas/o en zonas infectadas? o simplemente se lo descartaria de las posibilidades y se lo tomaria como un caso no sospechoso?. A su  vez queria preguntarle si se puede aplicar el uso del "exit".
+
+	Hola Francisco, El enunciado indica "La carga de datos debe hacerse de forma que se evite el ingreso de datos innecesarios, descartando rápidamente los casos que no sean sospechosos a medida que los datos se van cargando.". Esto significa que cuando ya sepan que no puede ser sospechoso, no sigan haciendo preguntas. Es una parte muy importante de la lógica que planteen. Con respecto a exit, no pueden usarlo, así como ninguna otra instrucción que no se encuentre en las fichas 01 a 05, tal como se aclara también en el enunciado:
+	Aclaración importante 1: El desarrollo de este Trabajo Práctico debe hacerse exclusivamente en base a las herramientas y temas que se vean hasta la Ficha 05 inclusive. No deben utilizar estructuras repetitivas (ciclos) ni funciones propias (ya que esos temas surgen en fichas posteriores).
+
+### En el cuadro de diagnóstico no tienen que salir los datos del paciente tales como el nombre y la edad o es indiferente? y si no da sospechoso y es menor de 61 años tiene que salir algún  cuadro de diagnóstico o no ?
+
+	En el cuadro de diagnóstico siempre debería aparecer el nombre (si lo cargaste, porque no se pide) y la edad del paciente. Y si resulta que no es sospechoso y es menor de 60, entonces también hay que informarlo de alguna forma ("No es sospechoso y no forma parte del grupo de riesgo").  Sea cuál sea el resultado, el programa siempre debe mostrar resultados (no deberías dejar la pantalla en blanco, y para los datos ingresados siempre debe haber una respuesta consistente).
+
+### Mi duda es si para ser cs debe tener fiebre, algun sintoma respiratorio y alguno de los items del punto 3. O si el punto 3 solo es para determinar que tipo de caso es ya que no se lo especifica ya que solamente pide que si se posee fiebre y algun sintoma se carguen los siguientes datos, pero en ningun momento vuelve a aclarar si ya con los dos primeros basta para considerarse cs o si hace falta que posea algo del punto 3.
+		
+		El punto 3 es necesario para determinar si se trata de un caso sospechoso, fijate que en el cuadro el Ministerio dice "Y" antes de la sección "En los últimos 14 días"
+
+### En el caso de los sospechosos autóctonos, la condición 2.2 esta clara, pero en el caso de la 2.1 cuando habla de 2 síntomas respiratorios tiene en cuanta la fiebre? o solo son 2 respiratorios sin fiebre?
+
+	La condición 2.1 se refiere a gente que ya es considerada sospechosa, por lo que el tema de la fiebre ya lo miraste. En este caso nos hemos tomado la licencia de modificar levemente el criterio que se deduce de la tabla del Ministerio (introduciendo la idea de caso autóctono con dos síntomas), para que ustedes tengan que cargar los tres síntomas por separado y tengan que aplicar condicionales sobre esos síntomas... ;-)
+
+### Buen día profes, Citando lo que aparece en el TP:
+	Si es un caso autóctono:
+		Presenta al menos 2 de los síntomas respiratorios consultados.
+		No ha estado en contacto con casos confirmados ni tiene historial de viaje fuera del país, pero estuvo en zonas de transmisión local.
+	La duda sería, ¿se deben cumplir ambas condiciones (Y), o se debe cumplir una u otra (O) para que un caso sospechoso se considere autóctono?
+
+		Hola Santiago! Es un Y!! Ambas condiciones se deben cumplir.
+
+### Una consulta, cuando ponemos un valor equivocado de ingreso en el programa hay que crear una alerta, mensaje para que se ingrese un valor correcto?.
+		
+		Hola Jazmín! Por el momento ingreso de datos erróneo no es algo que nos preocupe.
+
+### Cuándo sería exactamente caso no sospechoso? Qué tendría que no cumplirse para que sea caso no sospechoso? 
+		
+		Un caso no es sospechoso si no es neumonía, ni tiene fiebre, o tiene fiebre y no tiene un síntoma respiratorio adicional, o tiene al menos un síntoma adicional pero no es personal de salud, ni viajó al exterior, ni estuvo en contacto con casos confirmados ni estuvo o vive en zona de transmisión local del virus en el país.
+
+### En cuanto a los resultados que se muestran, debemos ser detallistas? es decir, indicar si presento sintomas, si es sospechoso por neumonia o por fiebre y sintomas etc, o solo hay que poner 1 sospechoso si/no 2 autoctono si/no 3 de riesgo si/no?
+
+		Hola Milagros! Lo mínimo a mostrar es sospecho, autóctono y de riesgo... pero el resto si quieren mostrar MAS no hay problema.
+
+### Una duda: Si el paciente tiene neumonia, ¿es necesario preguntar por los sintomas respirtatorios para determinar si el caso es autoctono o consideramos que ya los posee por padecer neumonia? 
+
+		Hola Lucas! Si tiene neumonía es sospechoso por lo que no hacés más preguntas en ese caso. Por lo tanto no te sirve para determinar si es autóctono.
+
+###  Buenas tardes, nos surgió una duda respecto al punto dos del cuadro de diagnostico. Para que un paciente pertenezca al grupo de caso autóctono, debe cumplir con las dos condiciones, o con que cumpla una sola ya es clasificado como caso autóctono?. 
+
+		Hola Victoria! Debe cumplir con ambas condiciones indicadas.
+
+### Hola profe, buenas tardes! Una duda con respecto a como diagnosticar caso sospechoso, si alguien estuvo de viaje dentro de los 14 dias ya lo podemos poner como caso sospechoso sin preguntarle si tiene fiebre y alguno de los sintomas o si o si hay que preguntar eso.
+
+		La definición de caso sospechoso (que es la que usa el Ministerio de Salud) dice que debe tener fiebre Y al menos un síntoma respiratorio Y una de estas opciones: haber viajado al exterior, haber estado en contacto con un caso confirmado, haber estado en una zona de transmisión local o ser personal de salud.Por lo tanto la respuesta a tu pregunta es no... debe tener lo otro también.
+
+### Tengo una duda con respecto al primer trabajo práctico. En la consigna dice que solo se puede utilizar lo aprendido hasta la ficha 05 inclusive. Mi duda es, ¿el contenido dado en la ficha 01 opcional también puede ser utilizado? Es decir, si queremos hacer que el resultado final no se muestre por consola sino por una ventana sencilla como se muestra en esa ficha, ¿se descontarán puntos o se tomará como un plus válido?
+
+		Hola Catalina! La ficha opcional 1 es parte de lo que pueden usar. No se bajarán puntos por ello.
+
+### En el caso del resultado o la visualización de datos. ¿Solo debe presentarse uno de los diagnósticos o los 3 simultáneamente?, ya que si por ejemplo es un caso autóctono se sobreentiende que es sospechoso de COVID-19
+
+		Si es autóctono es lógicamente sospechoso. Los tres a la vez no puede tener, sólo esos dos. Porque paciente de riesgo se indica si NO es sospechoso. Deberían indicar que es un caso sospechoso Y autóctono si fuera el caso que cumple con ambas.
+
+### Para que sea caso autóctono la persona debe presentar dos sintomas(o mas) y también haber estado en zona de transmición local (no habiendo estado en contacto con un efermo o de viaje fuera del país). Nuestra duda es:  si haber estado en zona de transmición local es una condicción obligatoria
+
+		Hola Franco! Si tiene que tener fiebre y al menos 2 de los síntomas respiratorios. Y TAMBIEN no haber estado en contacto con un caso confirmado NI haber viajado al exterior PERO SI haber estado en zona de transmisión local.
+
+### Tenemos una duda sobre como detectar si tiene neumonía. Podemos preguntarlo o tenemos que preguntarle si tiene los síntomas correspondientes?
+
+		Deben preguntar específicamente por la neumonía.
+
+### Hola romina una consulta, ¿seria erróneo si preguntamos los síntomas para determinar la neumonia?
+	
+		Hola David! No sería respetar las consignas del TP en dónde indica que al inicio se debe preguntar edad, temperatura y si tiene neumonía... y que si tiene neumonía ya es sospechoso.
+
+###		Hola Francisco,
+		Voy a partir del enunciado, para ver si se entiende mejor.
+		En este punto se pregunta si el paciente tiene neumonía:
+
+		1.) En primer lugar, cargar la edad, la temperatura corporal y un valor que indique si el paciente tiene neumonía ya evidenciada. En caso de efectivamente padecer neumonía, el caso es sospechoso sin tener en cuenta las demás variables. Queda a criterio del estudiante la forma en que cargará por teclado el indicador de neumonía.
+
+		Es lógico entonces que si el paciente tiene neumonía evidenciada, va a ser considerado sospechoso, y no van a llegar a preguntarle por los antecedentes de viajes, que se detallan en el punto 3:
+		3.) Habiendo cargado los datos del punto 2,...
+	Considerando esto, los pacientes con neumonía SIEMPRE deben contaarse como SOSPECHOSOS, pero es OPCIONAL contarlos como AUTÓCTONOS (les dejamos la decisión a ustedes).
+
+### Cuando realizamos la carga de datos de la neumonia, fiebre, edad, luego pasamos a verificar los demas sintomas y si hay fiebre y algun sintoma a que completen otra "ficha" para corroborar su estado. ¿Nosotros al finalizar la carga de datos debemos mostrar todos los datos del paciente ? ¿O solo tenemos que determinar si es un caso sospechoso ? 
+
+		Hola Francisco,
+		Lo que se pide es que informen si es sospechoso, autoctono y grupo de riesgo.
+	El resto de la información pueden mostrarla si les parece conveniente, siempre de una forma clara y entendible, que no resulte redundante.
+
+### Buenas tardes profe, con mi grupo tenemos una duda respecto a los cuadros de diagnostico. Para que sea un caso autoctono,  es requisito necesario  que sea previamente sospechoso, por lo cual surge lo siguiente ¿Es necesario mostrar ambos casos diagnostico?
+
+		Sí, es necesario que muestren ambas cosas.
+
+### En el esquema de carga sugerido dice que si el paciente tiene neumonía es caso sospechoso sin tener en cuenta las demás variables. Si además estuvo en contacto con casos confirmados, viajó al exterior o estuvo en una zona de transmision local confirmada ¿Significa que es un caso autóctono o debe haber otro síntoma además de la neumonía?
+
+			Efectivamente, si tiene neumonía hay informarlo como sospechoso directamente, pero si además se cumple lo de ser un caso autóctono, hay que informarlo en la parte 2 del cuadro también.
+
+		Así es, los casos autóctonos son una segunda condición dentro de los sospechosos. Deben controlar ambas cosas.
+		Aclaro nuevamente por las dudas: sospechoso es una clasificación, y autóctono otra. Deben validar AMBAS cosas, sabiendo que los autóctonos son un subgrupo dentro de los sospechosos.
+		Dicho esto, es probable que al plantear el ingreso de datos, definan que un paciente con neumonía es sospechoso y no ingresen el resto de los datos (respiratorios y viajes). En ese caso, dejamos a criterio de ustedes contarlos como autóctonos o no.
+		Hay otras preguntas en el foro donde lo respondimos detalladamente.
+
+
+### Disculpe profe que me meta, pero yo tenia que la pregunta de si es personal de salud es solo un dato mas que no aporta en nada. No encuentro el cuadro del que hablo donde diga que tiene que ser personal de salud para ser un caso sospechoso.
+
+		Lo del personal de salud SÍ aporta, al pie del cuadro del Ministerio se indica "Todo personal de salud que presente fiebre y uno o más síntomas respiratorios". Es decir, que si un paciente tiene fiebre y sintomas respiratorios y es personal de salud, es sospechoso aunque no cumpla ninguno de los antecedentes mencionados como "En los ultimos 14 días..."
+
+### Quería consultar si en el caso de que el paciente presente neumonía, es necesario seguir consultando sobre información de su edad y/o sus últimos 14 días (para determinar si es caso autóctono o de viaje al exterior) .
+
+		Eso está explicado en el enunciado, y es una de las cosas que esperamos que ustedes determinen.
+
+### Hola profe, una consulta, para que un caso sea autoctono se tienen que cumplir las 2 coindiciones que indica el enunciado? estas serian no haber estado fuera del pais pero si en zonas de transmicion local y presentar 2 sintomas respiratorios. Con respecto a esta ultima coindicion tambien nos surgio otra duda: la coindicion se cumple si hay 2 sintomas respiratorios pero NO hay fiebre?
+
+		Hola Geronimo! Se deben cumplir las 2 condiciones que el enunciado indica. Y también debe tener fiebre a demás de dos síntomas respiratorios.
+	
+### Me surgio otra duda.. si solo viajo o estuvo en zonas de transmicion local ya se considera sospechoso?
+
+		Hola Geronimo,
+		No, las reglas para que sea sospechoso son las que están en el cuadro:
+		- Tener fiebre y uno o más síntomas respiratorios y en los últimos 14 días....
+		- Tener neumonía declarada
+		- Tener fiebre y uno o más síntomas respiratorios y ser personal de salud
+
+		Todo esto lo tienen que ir preguntando ordenadamente y descartar casos rápidamente sin pedir datos de más, tal como indica el enunciado.
+		El caso autóctono es una subclasificación del caso sospechoso, son diferentes.
+
+### Profe, respecto al punto 3 de carga de datos 
+3.) Habiendo cargado los datos del punto 2, si hay fiebre y al menos uno de los síntomas respiratorios, cargar lo siguiente (en todos los casos, se deja para el estudiante determinar la forma en que cargará los indicadores solicitados)
+Si al poseer fiebre y ningun sintoma respiratorio, no seria caso sospechoso, pero en el cuadro del ministerio indica que aun asi podria ser sospechosos si estuvo en contacto con casos confirmados, si viajó al exterior o estuvo en zonas de transmision. 
+Por lo que me da a entender que para ser un caso sospechoso SI O SI hay que tenes fiebre, uno o mas sintomas respiratorios y haber estado en contacto con casos sospechosos o a ver viajado fuera del pais o estar en zona de transmision local.
+Por lo que tener fiebre y uno o mas sintomas no basta para ser un caso sospechoso.
+Mi duda es que tomamos en cuenta para considerarlo caso sospechoso
+
+	Hola Claudio,
+	Si tiene fiebre y ningún síntoma respiratorio, no puede ser sospechoso. Por qué decis que el cuadro del Ministerio indica otra cosa? Entre ambos cuadros hay una "Y"
+
+### Buenas tardes profe, mi motivo de la consulta es la siguiente:
+En un principio, ya nos hicieron saber que tenemos que usar los conocimientos que nos han dado por medio de las fichas, y tenerlas en cuenta para realizar el TP, hasta la ficha 5 inclusive.
+De antemano, tengo un conocimiento en la cual es una función llamada (.upper) o (.lower), en la cual, tengo pensado implementarlo en el TP al momento de validar ciertas preguntas que se le hará al usuario y seguir con el correcto funcionamiento del programa.
+Esa función mencionada, si no recuerdo, no aparece en ninguna de las 5 fichas que hay que tener en cuenta
+Mi duda es: Si implemento esa función en el TP, es posible que reciba una sanción (ej: bajada de puntos) por utilizar algo que no hemos visto?
+Desde ya, muchas gracias, y espero su respuesta.
+
+		Hola Diego, eso lo hablamos en clases hoy pero dejamos la respuesta por acá.
+		Si pueden usar las funciones upper y lower que de hecho en muchas clases prácticas las hemos mostrado.
+
+### Nuestro grupo tiene una duda con respecto a la identificación de un caso autóctono: para ser considerado como tal, ¿debe presentar fiebre y uno o más síntomas respiratorios, o fiebre y dos o más síntomas respiratorios? Nuestra duda aparece porque al principio del enunciado se considera caso autóctono si "Presenta al menos 2 de los síntomas respiratorios consultados.", pero no se menciona nada acerca de la fiebre.
+
+		Para determinar si es autóctono debe tener fiebre Y DOS o más síntomas.
+
+### Hola profe Buenas tardes... una consulta.. si el usuario carga que no tiene neumonia ni fiebre ni sintomas hace falta preguntar que hizo los ultimos 14 dias?
+
+		Hola Geronimo,
+		El enunciado indica 
+		La carga de datos debe hacerse de forma que se evite el ingreso de datos innecesarios, descartando rápidamente los casos que no sean sospechosos a medida que los datos se van cargando. la forma en que ustedes lo logren es parte de lo que vamos a evaluar.
+
+###	 Hola profes, buenas tardes, queríamos saber en nuestro grupo del TP1, si podríamos poner como una muestra por consola, un texto que diga que el usuario ingrese un tipo de valor determinado de esa manera determinada para que el programa no de error luego o no se ejecute correctamente. ¿Se podría hacer lo mencionado anteriormente o tendríamos que realizar de otra manera el programa ?
+
+		En este primer TP, pueden considerar que el usuario ingresa los datos exactamente como se los piden (eso vamos a hacer nosotros al corregirlo). Más adelante veremos cómo validar los valores que el usuario ingresa.
+
+### Hola! Creo que esto ya lo respondieron pero no me quedó bien claro. En el caso autoctono que dice que tiene que presentar al menos dos síntomas respiratorios y haber estado en zona de contagio local ¿también tiene que tener fiebre para que se cumpla esto por más que haya estado en una zona de contagio local y tenga los síntomas?
+
+		Por lo que entendí , el caso autóctono es una subclase del caso sospechoso, osea no puede pasar que SI sea autóctono y NO sospechoso. Pero si para ser autóctono tiene que ser sospechoso. Por lo tanto si es sospechoso tenes que indicar aparte si es autóctono o no.
+		Sí, es así exactamente. Todos los casos autóctonos deben ser antes sospechosos.
+
+
