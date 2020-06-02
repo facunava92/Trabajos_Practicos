@@ -1,29 +1,26 @@
-#!/usr/bin/python
 import random
 
 
 def validacion(intentos):
     for i in range(intentos):
         email = input('* Ingrese su e-mail: ')
-        N = len(email)
         cont_arroba = 0
         access = True
 
-        if email[0] == '@' or email[N - 1] == '@' or email[0] == '.' or email[N - 1] == '.':
+        if email[0] == '@' or email[-1] == '@' or email[0] == '.' or email[-1] == '.':
             access = False
 
+        if ".." in email:
+            access = False
+        
         if access:
-            for n in range(N - 1):
-                if email[n] == '@':
+            for caracter in email: 
+                if caracter == '@':
                     cont_arroba += 1
                     if (cont_arroba > 1):
                         access = False
                         break
-
-                if email[n] == '.':
-                    if email[n + 1] == '.':
-                        access = False
-
+            
             if (cont_arroba < 1):
                 access = False
 
@@ -87,9 +84,9 @@ if access:
                 cont_sur += 1
             if region == 'Gran Cordoba':
                 cont_gcba += 1
-
+            
             # Caso autoctono
-            if test == 'positivo' and contacto == 'No' and personal == 'No' and viajo == 'No':
+            if (contacto == 'No' and personal == 'No' and viajo == 'No'):
                 cont_autoc += 1
                 if edad < menor_edad:
                     menor_edad = edad
@@ -103,29 +100,22 @@ if access:
 
     #Procesamiento de datos
     porc_positivos = round((casos/pacientes), 2) * 100
+    porc_personal = round((cont_personal/pacientes*100), 2)
 
     if cont_riesgo >= 1:
         prom_edadriesgo = round((cont_edadriesgo/cont_riesgo), 2)
-    else:
-        prom_edadriesgo = False
+
+    if not(cont_autoc):
+        menor_edad = False
 
     if casos >= 1:
         prom_edadcasos = round((total_edad/casos), 2)
-        porc_personal = round((cont_personal/casos*100), 2)
+        porc_autoctono = round((cont_autoc/casos*100), 2)
         porc_norte = round((cont_norte/casos*100), 2)
         porc_sur = round((cont_sur/casos*100), 2)
         porc_gcba = round((cont_gcba/casos*100), 2)
         porc_capital = round((cont_capital/casos*100), 2)
-        porc_autoctono = round((cont_autoc/casos*100), 2)
-    else:
-        prom_edadcasos = False
-        porc_personal = False
-        porc_norte = False
-        porc_sur = False
-        porc_gcba = False
-        porc_capital = False
-        porc_autoctono = False
-
+    
     op = -1
     while (op != 0):
         print('==============================================================================================================')
@@ -138,7 +128,7 @@ if access:
         print('\t 6.  Cantidad de casos confirmados por región y porcentaje que representa cada uno sobre el total de casos.')
         print('\t 7.  Cantidad de casos confirmados con viaje al exterior.')
         print('\t 8.  Cantidad de casos sospechosos en contacto con casos confirmados.')
-        print('\t 9.  Las regiones sin cacos confirmados.')
+        print('\t 9.  Las regiones sin casos confirmados.')
         print('\t 10. Porcentaje de casos positivos autóctonos sobre el total de positivos.')
         print('\t 0.  Salir')
         print('============================================================================================================== \n')
@@ -210,7 +200,7 @@ if access:
         elif op == 8:
             if cont_contacto:
                 print('\t\t ----------------------------------------------------------------------------------')
-                print('\t\t || La cantida de casos sospechoso en contacto con casos confimados es de:', cont_contacto, '. ||')
+                print('\t\t || La cantidad de casos sospechoso en contacto con casos confimados es de:', cont_contacto, '. ||')
                 print('\t\t ----------------------------------------------------------------------------------')
             else:
                 print('\t\t ---------------------------------------------------------------------------------')
@@ -224,10 +214,14 @@ if access:
             else:
                 print('\t\t --------------------------------------------------------')
                 print('\t\t || Las regiones donde no se han registrado casos son: ||')
-                print('\t\t ||    *Sur                                            ||')
-                print('\t\t ||    *Norte                                          ||')
-                print('\t\t ||    *Capital                                        ||')
-                print('\t\t ||    *Gran Córdoba                                   ||')
+                if not(cont_sur):
+                    print('\t\t ||    *Sur                                            ||')
+                if not(cont_norte):
+                    print('\t\t ||    *Norte                                          ||')
+                if not(cont_capital):
+                    print('\t\t ||    *Capital                                        ||')
+                if not(cont_gcba):
+                    print('\t\t ||    *Gran Córdoba                                   ||')
                 print('\t\t --------------------------------------------------------')
         elif op == 10:
             if cont_autoc:
@@ -243,10 +237,3 @@ if access:
 
 else:
     print('Acceso DENEGADO')
-
-
-
-
-
-
-
