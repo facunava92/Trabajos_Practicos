@@ -104,6 +104,8 @@ if access:
 
     if cont_riesgo >= 1:
         prom_edadriesgo = round((cont_edadriesgo/cont_riesgo), 2)
+    else:
+        prom_edadriesgo = 0
 
     if not(cont_autoc):
         menor_edad = False
@@ -115,7 +117,14 @@ if access:
         porc_sur = round((cont_sur/casos*100), 2)
         porc_gcba = round((cont_gcba/casos*100), 2)
         porc_capital = round((cont_capital/casos*100), 2)
-    
+    else:
+        prom_edadcasos = 0
+        porc_autoctono = 0
+        porc_norte = 0
+        porc_sur = 0
+        porc_gcba = 0
+        porc_capital = 0
+
     op = -1
     while (op != 0):
         print('==============================================================================================================')
