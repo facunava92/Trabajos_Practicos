@@ -50,7 +50,8 @@ cont_gcba = 0
 cont_contacto = 0
 cont_riesgo = 0
 
-print('\t\t\t\t ### Trabajo Práctico 02: Generación de Estadísticas sobre COVID-19 ###\n')
+print('\t\t\t ### Trabajo Práctico 02: Generación de Estadísticas sobre COVID-19 ###\n')
+print('Ingrese su mail respetando la siguiente estructura, nombre@dominio')
 access = validacion(intentos)
 if access:
     print('\t\t\t\t Acceso al sistema!!!\n')
@@ -243,6 +244,9 @@ if access:
                 print('\t\t --------------------------------------------')
         elif op == 0:
             print('ADIOS!')
-
+        else:
+            print('\t\t ------------------------------------------------------------')
+            print('\t\t || Opción INCORRECTA!!, si quiere terminar ingrese "0"... ||')            
+            print('\t\t ------------------------------------------------------------')
 else:
     print('Acceso DENEGADO')
